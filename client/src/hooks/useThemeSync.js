@@ -5,6 +5,21 @@ import { toast } from 'sonner';
 
 export const useThemeSync = () => {
   const { theme: nextTheme, setTheme: setNextTheme } = useTheme();
+
+  // Guard: `useAppTheme` throws when used outside of ThemeProvider.
+  // Catch that case and no-op so ThemeSync can be safely mounted outside provider (e.g., during splash).
+  let appTheme = null;
+  try {
+    appTheme = useAppTheme();
+  } catch (e) {
+    // ThemeProvider not present — do nothing and return noop helpers
+    return {
+      resetToDefaults: () => {},
+      exportSettings: () => {},
+      importSettings: () => {}
+    };
+  }
+
   const {
     theme,
     setTheme,
@@ -17,7 +32,7 @@ export const useThemeSync = () => {
     borderRadius,
     soundEnabled,
     availableThemes
-  } = useAppTheme();
+  } = appTheme;
 
   useEffect(() => {
     if (theme !== nextTheme) {

@@ -26,6 +26,15 @@ api.interceptors.request.use(
         if (token) {
             config.headers.Authorization = `Bearer ${token}`;
         }
+
+        // Dev-only debug: log request URL and whether a token was found
+        if (import.meta.env.DEV) {
+            try {
+                console.debug('[api] Request:', (config.method || '').toUpperCase(), config.url, 'isCustomerRequest=', isCustomerRequest, 'tokenPresent=', !!token);
+            } catch (e) {
+                // ignore logging errors
+            }
+        }
         return config;
     },
     (error) => {
@@ -50,6 +59,12 @@ api.interceptors.response.use(
                                      error.config?.url?.includes('/customer/');
             
             if (status === 401) {
+                if (import.meta.env.DEV) {
+                    try {
+                        const usedToken = (error.config && ((error.config.url?.includes('/customers/') || error.config.url?.includes('/customer/')) ? localStorage.getItem('customerToken') : localStorage.getItem('token')));
+                        console.debug('[api] 401 response for', error.config?.url, 'isCustomerRequest=', isCustomerRequest, 'tokenPresent=', !!usedToken, 'responseData=', error.response?.data);
+                    } catch (e) {}
+                }
                 // Handle customer vs admin auth differently
                 if (isCustomerRequest) {
                     // Customer auth error

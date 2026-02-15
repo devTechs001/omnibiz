@@ -78,7 +78,7 @@ function App() {
 
       // Initialize update service when app is ready
       updateService.start();
-    }, 3000); // Show splash for 3 seconds
+    }, 12000); // Show splash for 12 seconds
 
     return () => {
       clearTimeout(timer);
