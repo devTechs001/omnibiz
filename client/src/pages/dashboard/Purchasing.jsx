@@ -294,9 +294,9 @@ const Purchasing = () => {
     }).format(amount);
   };
 
-  const totalPending = purchaseOrders.filter(order => order.status === 'pending').length;
-  const totalApproved = purchaseOrders.filter(order => order.status === 'approved').length;
-  const totalValue = purchaseOrders.reduce((sum, order) => sum + order.totalAmount, 0);
+  const totalPending = (Array.isArray(purchaseOrders) ? purchaseOrders : []).filter(order => order.status === 'pending').length;
+  const totalApproved = (Array.isArray(purchaseOrders) ? purchaseOrders : []).filter(order => order.status === 'approved').length;
+  const totalValue = (Array.isArray(purchaseOrders) ? purchaseOrders : []).reduce((sum, order) => sum + (order.totalAmount || 0), 0);
 
   return (
     <div className="space-y-6">
@@ -541,7 +541,7 @@ const Purchasing = () => {
               </TableRow>
             </TableHeader>
             <TableBody>
-              {purchaseOrders.map((order) => (
+              {(Array.isArray(purchaseOrders) ? purchaseOrders : []).map((order) => (
                 <TableRow key={order.id}>
                   <TableCell className="font-medium">{order.orderNumber}</TableCell>
                   <TableCell>{order.supplier}</TableCell>
@@ -698,7 +698,7 @@ const Purchasing = () => {
               </CardHeader>
               <CardContent>
                 <div className="space-y-4">
-                  {purchaseOrders.filter(order => order.status !== 'cancelled').map((order) => (
+                  {(Array.isArray(purchaseOrders) ? purchaseOrders : []).filter(order => order.status !== 'cancelled').map((order) => (
                     <div key={order.id} className="flex items-center justify-between p-3 border rounded-lg">
                       <div>
                         <p className="font-medium text-sm">{order.orderNumber}</p>
@@ -740,7 +740,7 @@ const Purchasing = () => {
                     </TableRow>
                   </TableHeader>
                   <TableBody>
-                    {purchaseOrders.filter(o => o.status === 'approved' || o.status === 'delivered').map((order) => (
+                    {(Array.isArray(purchaseOrders) ? purchaseOrders : []).filter(o => o.status === 'approved' || o.status === 'delivered').map((order) => (
                       <TableRow key={order.id}>
                         <TableCell className="font-medium">{order.orderNumber}</TableCell>
                         <TableCell>{order.supplier}</TableCell>

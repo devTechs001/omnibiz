@@ -6,6 +6,8 @@ import { VitePWA } from 'vite-plugin-pwa'
 
 // https://vite.dev/config/
 export default defineConfig({
+  // GitHub Pages base path - update with your username
+  base: process.env.GITHUB_PAGES ? '/omnibiz/' : '/',
   plugins: [
     react(),
     tailwindcss(),

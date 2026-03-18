@@ -477,7 +477,7 @@ const SplashScreen = ({
                 }}
                 transition={{ duration: 2, repeat: Infinity }}
               />
-              
+
               {/* Logo */}
               {customLogo || (
                 <Logo
@@ -550,7 +550,7 @@ const SplashScreen = ({
                       animate={{ x: ['-100%', '100%'] }}
                       transition={{ duration: 1.5, repeat: Infinity, ease: 'linear' }}
                     />
-                    
+
                     {/* Stripes Animation */}
                     <motion.div
                       className="absolute inset-0 opacity-20"
@@ -622,7 +622,7 @@ const SplashScreen = ({
                 >
                   <motion.span
                     className="text-3xl"
-                    animate={{ 
+                    animate={{
                       rotate: [0, 10, -10, 0],
                       scale: [1, 1.2, 1],
                     }}
@@ -670,7 +670,7 @@ const SplashScreen = ({
                       }
                       transition={{ duration: 1, repeat: Infinity }}
                     />
-                    
+
                     {/* Tooltip */}
                     <div className="absolute bottom-full left-1/2 -translate-x-1/2 mb-2 px-2 py-1 bg-gray-800 text-white text-xs rounded opacity-0 group-hover:opacity-100 transition-opacity whitespace-nowrap pointer-events-none">
                       {step.label}

@@ -9,9 +9,10 @@
     "server": "nodemon server/server.js",
     "client": "cd client && npm run dev",
     "build": "cd server && npm install && cd ../client && npm run build",
+    "build:gh-pages": "cd client && cross-env GITHUB_PAGES=true npm run build",
     "start": "cd server && node server.js",
-    "predeploy": "npm run build",
-    "deploy": "gh-pages -d client/dist",
+    "predeploy": "npm run build:gh-pages",
+    "deploy": "gh-pages -d client/dist -t true",
     "electron": "electron .",
     "electron-dev": "concurrently \"npm run client\" \"wait-on http://localhost:5173 && electron .\"",
     "electron-build": "electron-builder"
@@ -32,6 +33,7 @@
     "nodemon": "^2.0.22",
     "concurrently": "^8.0.1",
     "gh-pages": "^5.0.0",
+    "cross-env": "^7.0.3",
     "electron": "^25.0.0",
     "electron-builder": "^24.0.0",
     "wait-on": "^7.0.1"
