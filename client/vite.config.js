@@ -22,8 +22,8 @@ export default defineConfig({
         background_color: '#ffffff',
         display: 'standalone',
         orientation: 'any',
-        scope: '/',
-        start_url: '/',
+        scope: './',
+        start_url: './',
         categories: ['business', 'finance', 'productivity'],
         screenshots: [
           {
