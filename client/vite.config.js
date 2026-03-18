@@ -88,21 +88,21 @@ export default defineConfig({
             name: 'Dashboard',
             short_name: 'Dashboard',
             description: 'Go to Dashboard',
-            url: '/dashboard',
+            url: './dashboard',
             icons: [{ src: 'icons/dashboard-96.png', sizes: '96x96' }]
           },
           {
             name: 'Orders',
             short_name: 'Orders',
             description: 'View Orders',
-            url: '/dashboard/orders',
+            url: './dashboard/orders',
             icons: [{ src: 'icons/orders-96.png', sizes: '96x96' }]
           },
           {
             name: 'Inventory',
             short_name: 'Inventory',
             description: 'Manage Inventory',
-            url: '/dashboard/inventory',
+            url: './dashboard/inventory',
             icons: [{ src: 'icons/inventory-96.png', sizes: '96x96' }]
           }
         ]
