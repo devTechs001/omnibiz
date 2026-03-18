@@ -6,8 +6,8 @@ import { VitePWA } from 'vite-plugin-pwa'
 
 // https://vite.dev/config/
 export default defineConfig({
-  // GitHub Pages base path
-  base: '/omnibiz/',
+  // GitHub Pages root deployment
+  base: './',
   plugins: [
     react(),
     tailwindcss(),
