@@ -16,6 +16,9 @@
   VITE_API_URL = "https://omnibiz.onrender.com"
   VITE_SOCKET_URL = "https://omnibiz.onrender.com"
 
+  # Production frontend URL
+  URL = "https://bizsolutionz.netlify.app"
+
 # Redirect rules for SPA (Single Page Application)
 [[redirects]]
   from = "/*"
