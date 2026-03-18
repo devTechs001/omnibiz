@@ -19,6 +19,12 @@
   # Production frontend URL
   URL = "https://bizsolutionz.netlify.app"
 
+  # Default Admin Credentials (CHANGE THESE!)
+  SUPER_ADMIN_EMAIL = "admin@omnibiz.com"
+  SUPER_ADMIN_PASSWORD = "Admin@12345"
+  ADMIN_EMAIL = "manager@omnibiz.com"
+  ADMIN_PASSWORD = "Manager@12345"
+
 # Redirect rules for SPA (Single Page Application)
 [[redirects]]
   from = "/*"

@@ -13,7 +13,7 @@
     "build": "cd client && npm install && npm run build",
     "build:gh-pages": "cd client && cross-env GITHUB_PAGES=true npm run build",
     "start": "cd server && node server.js",
-    "postinstall": "cd server && npm install",
+    "postinstall": "cd server && npm install && npm run seed-admins",
     "predeploy": "npm run build:gh-pages",
     "deploy": "gh-pages -d client/dist -t true -u \"devTechs001 <devtechs842@gmail.com>\"",
     "electron": "electron .",
