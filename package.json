@@ -12,7 +12,7 @@
     "build:gh-pages": "cd client && cross-env GITHUB_PAGES=true npm run build",
     "start": "cd server && node server.js",
     "predeploy": "npm run build:gh-pages",
-    "deploy": "gh-pages -d client/dist -t true",
+    "deploy": "gh-pages -d client/dist -t true -u \"devTechs001 <devtechs842@gmail.com>\"",
     "electron": "electron .",
     "electron-dev": "concurrently \"npm run client\" \"wait-on http://localhost:5173 && electron .\"",
     "electron-build": "electron-builder"
