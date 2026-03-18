@@ -18,8 +18,8 @@
 3. **Environment Variables**
    ```
    NODE_VERSION=22
-   VITE_API_URL=https://omnibiz.onrender.com
-   VITE_SOCKET_URL=https://omnibiz.onrender.com
+   VITE_API_URL=https://YOUR_BACKEND_URL.onrender.com
+   VITE_SOCKET_URL=https://YOUR_BACKEND_URL.onrender.com
    ```
 
 4. **Deploy**
@@ -54,8 +54,8 @@
 
 [build.environment]
   NODE_VERSION = "22"
-  VITE_API_URL = "https://omnibiz.onrender.com"
-  VITE_SOCKET_URL = "https://omnibiz.onrender.com"
+  VITE_API_URL = "https://YOUR_BACKEND_URL.onrender.com"
+  VITE_SOCKET_URL = "https://YOUR_BACKEND_URL.onrender.com"
 
 [[redirects]]
   from = "/*"
