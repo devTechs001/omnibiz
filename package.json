@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "description": "Comprehensive business management system",
   "main": "server/server.js",
-  "homepage": "https://YOURUSERNAME.github.io/omnibiz",
+  "homepage": "https://devtechs001.github.io/omnibiz",
   "scripts": {
     "dev": "concurrently \"npm run server\" \"npm run client\"",
     "server": "nodemon server/server.js",
